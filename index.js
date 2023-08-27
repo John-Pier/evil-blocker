@@ -7,6 +7,11 @@ const createLi = (text) => {
     return li;
 };
 
+document.querySelector('#delete-all')?.addEventListener('click', async () => {
+    await chrome.storage.local.remove(storageKey);
+    list.innerHTML = '';
+});
+
 (async function () {
     const lockedSitesStore = await chrome.storage.local.get(storageKey);
     const lockedSites = lockedSitesStore[storageKey] || [];
@@ -15,3 +20,4 @@ const createLi = (text) => {
         list.insertAdjacentElement('afterbegin', createLi(site));
     })
 }) ()
+

@@ -1,7 +1,3 @@
-console.log('Load worker');
-
-const sitesToLock = [];
-
 chrome.runtime.onInstalled.addListener( () => {
     chrome.action.setBadgeText({
         text: "OFF",

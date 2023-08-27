@@ -1,11 +1,9 @@
-console.info('WebSite L0cker Init')
+console.info('WebSiteEvilBl0cker Init')
 
 const blockSvgUrl = chrome.runtime.getURL('scripts/block.svg');
 const yandexSearch = 'https://www.yandex.ru/search';
 const isYandexSearch = () => location.href.includes(yandexSearch);
-// const storageItemKey = 'locked_sites';
 const storageKey = 'locked_sites';
-console.log(blockSvgUrl);
 
 function deleteCallback(link) {
     return async event => {
@@ -15,8 +13,6 @@ function deleteCallback(link) {
             const lockedSitesStore = await chrome.storage.local.get(storageKey);
             lockedSitesStore[storageKey].push(new URL(decodeURIComponent(link?.href)).host);
             await chrome.storage.local.set(lockedSitesStore);
-
-            console.info('remove: ', lockedSitesStore);
             tick();
         }
     };
@@ -55,7 +51,7 @@ function findAndRemove(lockedSites = []) {
             })
 
             if (isBlocked) {
-                console.log('Remove', link?.href);
+                console.info('Remove', link?.href);
                 resultItem.remove();
             }
         })

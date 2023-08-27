@@ -1,7 +1,7 @@
 {
-  "name": "WebSiteLocker",
+  "name": "WebSiteEvilBlocker",
   "version": "0.0.1",
-  "description": "Lock bad sites. Block them all!",
+  "description": "Search blocker in Chrome. Block them all!",
   "manifest_version": 3,
   "author": "John Pier",
   "action":{

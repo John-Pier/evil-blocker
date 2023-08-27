@@ -1,0 +1,12 @@
+{
+  "name": "WebSiteLocker",
+  "version": "0.0.1",
+  "description": "Lock bad sites. Block them all!",
+  "manifest_version": 3,
+  "author": "John Pier",
+  "action":{
+    "default_popup": "index.html",
+    "default_icon": "assets/favicon36.png",
+    "default_title": "Locked resources"
+  }
+}

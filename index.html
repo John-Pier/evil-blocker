@@ -10,15 +10,42 @@
         body {
             width: 400px;
         }
+
+        header {
+
+        }
+
+        main {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        button {
+            padding: 4px;
+        }
+
     </style>
+    <script defer type="module" src="index.js"></script>
 </head>
 <body>
-<h1>WebSiteLocker</h1>
-<h2>Список блокируемых ресурсов</h2>
-<ul id="site-list">
-</ul>
+<header>
+    <h1>WebSiteLocker</h1>
+</header>
+<main>
+    <section about="resource links">
+        <h2>Список блокируемых ресурсов</h2>
+        <ul id="site-list"></ul>
+        <button id="delete-all">Очисть все</button>
+    </section>
 
-<button id="delete-all">Очисть все</button>
-<script defer type="module" src="index.js"></script>
+    <section  id="lock-current-section" about="lock current link">
+    </section>
+    <template id="lock-current-template">
+            <h2>Заблокировать текущий ресурс ?</h2>
+            <button id="lock-current-btn">Заблокировать</button>
+    </template>
+</main>
+
 </body>
 </html>
